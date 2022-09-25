@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="nope ecommerce regression suit">
+	<parameter name="browser" value="chrome"></parameter>
+	                                                     <!--  for not run randome -->
+	<test name="resression test" preserve-order="false">
+		<classes>
+			<!-- the classes i want to test -->
+			<!-- packageName.testname -->
+			<class name="tests.UserRegisterationTest"></class>
+			<class name="tests.AddProducTReveiw"></class>
+			<class name="tests.AddProductTochopphingCart"></class>
+			<class name="tests.AddProductTocompairTest"></class>
+			<class name="tests.AddProdyuctToWishList"></class>
+			<class name="tests.contactUsTest"></class>
+			<class name="tests.EmailFriendTest"></class>
+			<class name="tests.guestCheckoutProductFromCart"></class>
+			<class name="tests.MyAccountTest"></class>
+			<!--  <class name="tests.ProductHoverMenueTest"></class> -->
+			<class name="tests.RegisterUserCheckOutProduct"></class>
+			<class name="tests.searchProductAutosuggest"></class>
+			<class name="tests.SearchProductTest"></class>
+		</classes>
+	</test>
+</suite> 
