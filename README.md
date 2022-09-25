@@ -3,7 +3,7 @@ SeleniumFramework using java ,Maven,testNg and Pom
 
 And using ddt ,BDD frameworks in the project
 
-#Tech stach :
+#Tech stach 
 -Jvav
 -Maven
 -TestNg
