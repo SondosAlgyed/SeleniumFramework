@@ -2,6 +2,8 @@ package pages;
 
 
 import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,20 +13,17 @@ public class compareProductPage extends PageBase {
 	public compareProductPage(WebDriver driver) {
 		super(driver);
 	}
-	@FindBy(css="table.compare-products-table")
-	WebElement table;
-	@FindBy(tagName = "tr")
-	public List<WebElement> allRows;
-	@FindBy(tagName = "td")
-	public List<WebElement> allColmous;
-	@FindBy(css="h1")
-	WebElement comparelistHeader;
 
-	@FindBy(css = "div.no-data")
-	WebElement result;
-	
-	@FindBy(css="a.clear-list")
-	WebElement clearlistButton;
+	WebElement table=driver.findElement(By.cssSelector("table.compare-products-table"));
+	public List<WebElement> allRows=driver.findElements(By.tagName("tr"));
+
+	public List<WebElement> allColmous=driver.findElements(By.tagName("td"));
+
+	WebElement comparelistHeader=driver.findElement(By.cssSelector("h1"));
+
+	WebElement result= driver.findElement(By.cssSelector("div.no-data"));
+
+	WebElement clearlistButton= driver.findElement(By.cssSelector("a.clear-list"));
 	public void clearCompareList()
 	{
 		clickButton(clearlistButton);
@@ -46,11 +45,11 @@ public class compareProductPage extends PageBase {
 			}
 		}
 	}
-	@FindBy(linkText = "Asus N551JK-XO076H Laptop")
-	public WebElement NameSecondproduct;
+
+	public WebElement NameSecondproduct=driver.findElement(By.linkText("Asus N551JK-XO076H Laptop"));
 	
-	@FindBy(linkText = "Apple MacBook Pro 13-inch")
-	public WebElement NameFirstproduct;
+
+	public WebElement NameFirstproduct= driver.findElement(By.linkText("Apple MacBook Pro 13-inch"));
 	
 
 

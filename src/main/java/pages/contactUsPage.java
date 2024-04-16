@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,20 +11,19 @@ public class contactUsPage extends PageBase{
 		super(driver);
 	}
 
-	@FindBy(id="FullName")
-	WebElement nametxtBox;
+
+	WebElement nametxtBox=driver.findElement(By.id("FullName"));
+
+	WebElement EmailtxtBox=driver.findElement(By.id("Email"));
 	
-	@FindBy(id="Email")
-	WebElement EmailtxtBox;
+
+	WebElement submitbutton=driver.findElement(By.name("send-email"));
 	
-	@FindBy(name ="send-email")
-	WebElement submitbutton;
+
+	WebElement Enquiry=driver.findElement(By.id("Enquiry"));
 	
-	@FindBy(id="Enquiry")
-	WebElement Enquiry;
-	
-	@FindBy(css="div.result")
-	public WebElement successmessage;
+
+	public WebElement successmessage=driver.findElement(By.cssSelector("div.result"));
 	
 	
 	public void userCanContactUs(String name,String Email ,String enquiry)

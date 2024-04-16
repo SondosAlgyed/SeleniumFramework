@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,20 +11,20 @@ public class productReveiwPage extends PageBase{
 		super(driver);
 	}
 
-	@FindBy(id="AddProductReview_Title")
-	WebElement ReviewtitleTxtBox;
+
+	WebElement ReviewtitleTxtBox=driver.findElement(By.id("AddProductReview_Title"));
 	
-	@FindBy(id="AddProductReview_ReviewText")
-	WebElement ReviewtextBox;
+
+	WebElement ReviewtextBox=driver.findElement(By.id("AddProductReview_ReviewText"));
 	
-	@FindBy(id="addproductrating_3")
-	WebElement checkBoxRating;
+
+	WebElement checkBoxRating=driver.findElement(By.id("addproductrating_3"));
 	
-	@FindBy(name="add-review")
-	WebElement submiteview;
+
+	WebElement submiteview=driver.findElement(By.name("add-review"));
 	
-	@FindBy(css="div.review-title")
-	public WebElement successMessage;
+
+	public WebElement successMessage= driver.findElement(By.cssSelector("div.review-title"));
 	
 	public void UserCanAddreveiw(String title ,String review)
 	{

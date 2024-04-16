@@ -1,38 +1,37 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class wishListPage extends PageBase{
+public class wishListPage extends PageBase
+{
 
 	public wishListPage(WebDriver driver) {
 		super(driver);
 	}
-@FindBy(css ="a.product-name")
-WebElement productCell;
 
-@FindBy(css = "h1")
-public WebElement wishlistHeader;
+	WebElement productCell=driver.findElement(By.cssSelector("a.product-name"));
 
-@FindBy(id = "updatecart")
-WebElement updatewishListButton;
+	public WebElement wishlistHeader=driver.findElement(By.cssSelector("h1"));
 
-@FindBy(css= "button.remove-btn")
-WebElement removeFromCartcheck;
+	WebElement updatewishListButton=driver.findElement(By.id("updatecart"));
 
-@FindBy(css= "div.no-data")
-public WebElement EmptyCartlbl ;
+	WebElement removeFromCartcheck=driver.findElement(By.cssSelector("button.remove-btn"));
 
-public void removeproductFromCart()
-{
-	clickButton(removeFromCartcheck);
-	//clickButton(updatewishListButton);
-}
 
-	
-	
-	
+	public WebElement EmptyCartlbl=driver.findElement(By.cssSelector("div.no-data")) ;
+
+	public void removeproductFromCart()
+	{
+		clickButton(removeFromCartcheck);
+		//clickButton(updatewishListButton);
+	}
+
+
+
+
 	
 	
 	

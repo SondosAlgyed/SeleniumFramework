@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,10 +14,10 @@ public class ProductDetailsPage extends PageBase{
 	}
 	
 	@FindBy(css="strong.current-item")
-	public WebElement  productNameBreadcrum;
+	public WebElement  productNameBreadcrum=driver.findElement(By.cssSelector(""));
 	 
 	@FindBy(css="button.button-2.email-a-friend-button")
-	WebElement friendEmail;
+	WebElement friendEmail=driver.findElement(By.cssSelector(""));
 	
 	public void EmailAfriend()
 	{
@@ -24,34 +25,31 @@ public class ProductDetailsPage extends PageBase{
 		clickButton(friendEmail);
 	}
 	
-	@FindBy(css="span.price.actual-price")
-	public WebElement productprcie;
-	
-	@FindBy(linkText ="Add your review")
-	 WebElement Addreviewlink;
+
+	public WebElement productprcie=driver.findElement(By.cssSelector("span.price.actual-price"));
+
+	 WebElement Addreviewlink=driver.findElement(By.linkText("Add your review"));
 	public void openAddReveiw()
 	{
 		clickButton(Addreviewlink);
 	}
-	
-	@FindBy(id ="add-to-wishlist-button-4")
-	 WebElement wishlistbox;
+
+	 WebElement wishlistbox=driver.findElement(By.id("add-to-wishlist-button-4"));
 	public void openWishlist()
 	{
 		ScrolltoButtom();
 		clickButton(wishlistbox);
 	}
 	
-	@FindBy(css="button.button-2.add-to-compare-list-button")
-	public WebElement AddToCompairelistButton;
+
+	public WebElement AddToCompairelistButton=driver.findElement(By.cssSelector("button.button-2.add-to-compare-list-button"));
 	public void openAddToCompairelistButton()
 	{
 		ScrolltoButtom();
 		clickButton(AddToCompairelistButton);
 	}
-	
-	@FindBy(id="add-to-cart-button-4")
-	WebElement  AddToCartButton;
+
+	WebElement  AddToCartButton=driver.findElement(By.id("add-to-cart-button-4"));
 	public void userCanAddproductToCart()
 	{
 		ScrolltoButtom();

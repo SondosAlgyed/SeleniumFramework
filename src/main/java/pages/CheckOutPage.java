@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,18 +13,17 @@ public class CheckOutPage extends PageBase{
 		super(driver);
 	}
 
-	@FindBy(css ="button.button-1.checkout-as-guest-button")
-	WebElement checkoutasGuestButton;
+	WebElement checkoutasGuestButton=driver.findElement(By.cssSelector("button.button-1.checkout-as-guest-button"));
 	public void gotocheckoutpageAsGuest()
 	{
 		clickButton(checkoutasGuestButton);
 	}
-	@FindBy(id ="BillingNewAddress_FirstName")
-	WebElement FirstNametxtbox;
-	@FindBy(id ="BillingNewAddress_LastName")
-	WebElement LastNametxtbox;
-	@FindBy(id ="BillingNewAddress_Email")
-	WebElement EmailtxtBox;
+
+	WebElement FirstNametxtbox=driver.findElement(By.id("BillingNewAddress_FirstName"));
+
+	WebElement LastNametxtbox=driver.findElement(By.id("BillingNewAddress_LastName"));
+
+	WebElement EmailtxtBox=driver.findElement(By.id("BillingNewAddress_Email"));
 	public void BillingAdressAsGuest(String firstname,String lastname,String Email ) throws InterruptedException
 	{
 		Thread.sleep(2000);
@@ -32,27 +32,27 @@ public class CheckOutPage extends PageBase{
 		sendText(EmailtxtBox, Email);
 	}
 	
-	@FindBy(css ="button.button-1.new-address-next-step-button")
-	WebElement ContionueButtotonFirst;
+
+	WebElement ContionueButtotonFirst=driver.findElement(By.cssSelector("button.button-1.new-address-next-step-button"));
 	public void goTOShippingaddress()
 	{
 		clickButton(ContionueButtotonFirst);
 	}
-	@FindBy(id="BillingNewAddress_CountryId")
-	WebElement countryLIst;
-	@FindBy(id="BillingNewAddress_City")
-	WebElement CityTxtBox;
-	@FindBy(id="BillingNewAddress_Address1")
-	WebElement AdressTxtBox;
 
-	@FindBy(id="BillingNewAddress_ZipPostalCode")
-	WebElement ZipTextBox;
+	WebElement countryLIst=driver.findElement(By.id("BillingNewAddress_CountryId"));
 
-	@FindBy(id ="BillingNewAddress_PhoneNumber")
-	WebElement phoneNimberTxtBox;
+	WebElement CityTxtBox=driver.findElement(By.id("BillingNewAddress_City"));
 
-	@FindBy(xpath  ="//*[@id=\"billing-buttons-container\"]/button[4]")
-	WebElement ContionueButton;
+	WebElement AdressTxtBox=driver.findElement(By.id("BillingNewAddress_Address1"));
+
+
+	WebElement ZipTextBox=driver.findElement(By.id("BillingNewAddress_ZipPostalCode"));
+
+
+	WebElement phoneNimberTxtBox=driver.findElement(By.id("BillingNewAddress_PhoneNumber"));
+
+
+	WebElement ContionueButton=driver.findElement(By.xpath("//*[@id=\"billing-buttons-container\"]/button[4]"));
 
 	public void Billingaddress(String CityName,String Adress,String Phone ,String ZIp) throws InterruptedException
 	{
@@ -66,10 +66,10 @@ public class CheckOutPage extends PageBase{
 		clickButton(ContionueButton);
 
 	}
-	@FindBy(id="shippingoption_0")
-	WebElement shipingMethodRado;
-	@FindBy(css="button.button-1.shipping-method-next-step-button")
-	WebElement continueShippingbtn ;
+
+	WebElement shipingMethodRado=driver.findElement(By.id("shippingoption_0"));
+
+	WebElement continueShippingbtn=driver.findElement(By.cssSelector("button.button-1.shipping-method-next-step-button")) ;
 	public void Shippingaddress() throws InterruptedException
 	{
 		Thread.sleep(2000);
@@ -77,10 +77,10 @@ public class CheckOutPage extends PageBase{
 		clickButton(continueShippingbtn);
 	}
 
-	@FindBy(id="paymentmethod_0")
-	WebElement PaymentMethodRado;
-	@FindBy(css="button.button-1.payment-method-next-step-button")
-	WebElement continuePaymentbtn ;
+
+	WebElement PaymentMethodRado=driver.findElement(By.id("paymentmethod_0"));
+
+	WebElement continuePaymentbtn =driver.findElement(By.cssSelector("button.button-1.payment-method-next-step-button"));
 	public void payment() throws InterruptedException
 	{
 		Thread.sleep(2000);
@@ -88,28 +88,27 @@ public class CheckOutPage extends PageBase{
 		clickButton(continuePaymentbtn);
 	}
 
-	@FindBy(css="button.button-1.payment-info-next-step-button")
-	WebElement continuePaymentinformationbtn ;
+
+	WebElement continuePaymentinformationbtn=driver.findElement(By.cssSelector("button.button-1.payment-info-next-step-button")) ;
 	public void paymentcontioue() throws InterruptedException
 	{
 		Thread.sleep(2000);
 		clickButton(continuePaymentinformationbtn);
 	}
 
-	@FindBy(css="a.product-name")
-	WebElement productName;
-	@FindBy(css="button.button-1.confirm-order-next-step-button")
-	WebElement confirmButton;
+
+	WebElement productName=driver.findElement(By.cssSelector("a.product-name"));
+
+	WebElement confirmButton=driver.findElement(By.cssSelector("button.button-1.confirm-order-next-step-button"));
 	public void confirmPage() throws InterruptedException
 	{
 		Thread.sleep(2000);
 		clickButton(confirmButton);
 	}
 
-	@FindBy(css="h1")
-	public  WebElement thankyouLabel;
-	@FindBy(linkText ="Click here for order details.")
-	public  WebElement orderdetails ;
+	public  WebElement thankyouLabel=driver.findElement(By.cssSelector("h1"));
+
+	public  WebElement orderdetails=driver.findElement(By.linkText("Click here for order details.")) ;
 	public void orderDetaisPage() throws InterruptedException
 	{
 		Thread.sleep(2000);
