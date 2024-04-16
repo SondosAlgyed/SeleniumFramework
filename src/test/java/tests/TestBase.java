@@ -18,10 +18,11 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
-public class TestBase extends AbstractTestNGCucumberTests {
+public class TestBase extends AbstractTestNGCucumberTests
+{
 	
 	public static WebDriver driver ;
-	public static String downloadPath = System.getProperty("user.dir") + "\\DownLoads";
+	/*public static String downloadPath = System.getProperty("user.dir") + "\\DownLoads";
 
 	public static FirefoxOptions firefoxOption() {
 		FirefoxOptions option = new FirefoxOptions();
@@ -71,8 +72,17 @@ public class TestBase extends AbstractTestNGCucumberTests {
 				//driver.manage().timeouts().implicitlyWait(120,TimeUnit.SECONDS);
 				driver.navigate().to("https://demo.nopcommerce.com/");
 		       Thread.sleep(2000);
+	}*/
+	@BeforeSuite
+	public void startDriver()
+	{
+		driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.navigate().to("https://demo.nopcommerce.com/");
 	}
-	
+
+
+
 	@AfterSuite
 	public void closeDriver()
 	{
