@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,30 +11,23 @@ public class MyAccountPage extends PageBase {
 		super(driver);
 	}
 
-	@FindBy(linkText = "Change password")
-	WebElement changepassword;
+	WebElement changepassword=driver.findElement(By.linkText("Change password"));
 	public void openchangePasswordPage ()
 	{
 		clickButton(changepassword);
 	}
 
-	@FindBy(name = "OldPassword")
-	WebElement oldPasswordtxtBox ;
+	WebElement oldPasswordtxtBox=driver.findElement(By.name("OldPassword")) ;
 
-	@FindBy(name = "NewPassword")
-	WebElement newPasswordtxtBox ;
+	WebElement newPasswordtxtBox=driver.findElement(By.name("NewPassword"))  ;
 
-	@FindBy(name = "ConfirmNewPassword")
-	WebElement ConfirmNewPasswordtxtBpx ;
+	WebElement ConfirmNewPasswordtxtBpx=driver.findElement(By.name("ConfirmNewPassword"))  ;
 
-	@FindBy( xpath = "/html/body/div[6]/div[3]/div/div[2]/div/div[2]/form/div[2]/button")
-	WebElement changpasswordButton ;
+	WebElement changpasswordButton=driver.findElement(By.xpath("/html/body/div[6]/div[3]/div/div[2]/div/div[2]/form/div[2]/button")) ;
 
-	@FindBy(css ="p.content")
-	public WebElement result;
-	
-	@FindBy(css ="span.close")
-	public WebElement signalX;
+	public WebElement result=driver.findElement(By.cssSelector("p.content"));
+
+	public WebElement signalX= driver.findElement(By.cssSelector("span.close"));
 
 	public void changepassword(String oldpassword,String newpassword)
 	{

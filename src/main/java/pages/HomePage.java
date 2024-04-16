@@ -1,4 +1,5 @@
 package pages;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,22 +16,20 @@ public class HomePage extends PageBase {
        action =new Actions(driver);
 	}
 
-	@FindBy(linkText = "Register")
-	WebElement registerLink;
+
+	WebElement registerLink=driver.findElement(By.linkText("Register"));
 	public void openRegiterationPage()
 	{
 		clickButton(registerLink);
 	}
 
-	@FindBy(linkText = "Log in")
-	WebElement loginLonk;
+	WebElement loginLonk=driver.findElement(By.linkText("Log in"));
 	public void openLoginPage()
 	{
 		clickButton(loginLonk);
 	}
 
-	@FindBy(linkText = "Contact us")
-	WebElement contactusPage;
+	WebElement contactusPage=driver.findElement(By.linkText("Contact us"));
 	public void opencontactusPage()
 	{
 		//call method in pagebase
@@ -38,8 +37,7 @@ public class HomePage extends PageBase {
 		clickButton(contactusPage);
 	}
 
-	@FindBy(id="customerCurrency")                                     
-	WebElement cuencyList;
+	WebElement cuencyList= driver.findElement(By.id("customerCurrency"));
 	public void UserCanChangeCurncy()
 	{
 		select=new Select(cuencyList);
@@ -54,11 +52,9 @@ public class HomePage extends PageBase {
 	}
 */
 
-	@FindBy(linkText ="Computers ")                                     
-	WebElement Computersmenue ;
-	
-	@FindBy(linkText ="Notebooks")                                     
-	WebElement Notebooks  ;
+	WebElement Computersmenue= driver.findElement(By.linkText("Computers"));
+
+	WebElement Notebooks= driver.findElement(By.linkText("Notebooks"));
 	
 	public void SelectNoteBooksMenue() throws InterruptedException
 	{
