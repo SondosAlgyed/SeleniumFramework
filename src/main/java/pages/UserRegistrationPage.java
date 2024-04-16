@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,35 +14,25 @@ public class UserRegistrationPage extends PageBase{
 
 	}
 
-	@FindBy(id = "gender-male")
-	WebElement genderRadioButton;
+	WebElement genderRadioButton= driver.findElement(By.id("gender-male"));
 
-	@FindBy(id = "FirstName")
-	WebElement FirstnameTxtBox;
+	WebElement FirstnameTxtBox= driver.findElement(By.id("FirstName"));
 
-	@FindBy(id = "LastName")
-	WebElement LastnameTxtBox;
+	WebElement LastnameTxtBox= driver.findElement(By.id("LastName"));
 
-	@FindBy(id = "Email")
-	WebElement EmailtxtBox;
+	WebElement EmailtxtBox= driver.findElement(By.id("Email"));
 
-	@FindBy(id = "Password")
-	WebElement PasswordTxtBox;
+	WebElement PasswordTxtBox= driver.findElement(By.id("Password"));
 
-	@FindBy(id = "ConfirmPassword")
-	WebElement ConfirmPasswordTxtBox;
+	WebElement ConfirmPasswordTxtBox= driver.findElement(By.id("ConfirmPassword"));
 
-	@FindBy(id = "register-button")
-	WebElement registerButton;
+	WebElement registerButton= driver.findElement(By.id("register-button"));;
+
+	 public WebElement seccessmessage= driver.findElement(By.cssSelector("div.result"));
+
+	public WebElement logout=driver.findElement(By.cssSelector("a.ico-logout"));
 	
-	@FindBy(css = "div.result")
-	 public WebElement seccessmessage;
-	
-	@FindBy(css = "a.ico-logout")
-	public WebElement logout;
-	
-    @FindBy(linkText = "My account")
-    WebElement myaccountlink;
+    WebElement myaccountlink= driver.findElement(By.linkText("My account"));
     
 	public void  userRegestiration(String firstName ,String lastNmae,String Email,String password)
 	{

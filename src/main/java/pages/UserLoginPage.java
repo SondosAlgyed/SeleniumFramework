@@ -1,8 +1,9 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+
 
 public class UserLoginPage extends PageBase {
 
@@ -10,14 +11,11 @@ public class UserLoginPage extends PageBase {
 		super(driver);
 	}
 
-	@FindBy(id = "Email")
-	WebElement EmailtxtBox;
+	WebElement EmailtxtBox= driver.findElement(By.id("Email"));
 
-	@FindBy(id = "Password")
-	WebElement PasswordltxtBox;
+	WebElement PasswordltxtBox=driver.findElement(By.id("Password"));;
 
-	@FindBy(xpath = "/html/body/div[6]/div[3]/div/div/div/div[2]/div[1]/div[2]/form/div[3]/button")
-	WebElement loginbtn;
+	WebElement loginbtn= driver.findElement(By.xpath("/html/body/div[6]/div[3]/div/div/div/div[2]/div[1]/div[2]/form/div[3]/button"));
 
 	public void Userlogin (String email,String password)
 	{

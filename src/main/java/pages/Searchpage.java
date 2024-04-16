@@ -2,30 +2,28 @@ package pages;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 
 
-public class Searchpage extends PageBase {
+
+public class Searchpage extends PageBase
+{
 
 	public Searchpage(WebDriver driver) {
 		super(driver);
 	}
-	
-	@FindBy(id ="small-searchterms")
-	WebElement searchtxtBox;
-	
-	@FindBy(css="button.button-1.search-box-button")
-	WebElement serchButton;
-	
-	@FindBy(id="ui-id-1") 
+
+	WebElement searchtxtBox=driver.findElement(By.id("small-searchterms"));
+
+	WebElement serchButton= driver.findElement(By.cssSelector("button.button-1.search-box-button"));
+
 	//find list type of it (webelement)
-	List<WebElement> productList;
-	
-	@FindBy(css="h2.product-title")
-	WebElement producttitle;
+	List<WebElement> productList=driver.findElements(By.id("ui-id-1"));
+
+	WebElement producttitle=driver.findElement(By.cssSelector("h2.product-title"));;
 	
 	
 	
